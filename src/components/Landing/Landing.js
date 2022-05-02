@@ -1,5 +1,6 @@
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@mui/styles';
+import React from 'react';
 
 const useStyles = makeStyles(theme => ({
   main: {
@@ -12,8 +13,16 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+
+
 const Landing = () => {
   const classes = useStyles();
+  // gettingWeather = async() => {
+  //   const api_url = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=${process.env.API_KEY}`);
+  //   const data = await api_url.json();
+  //   console.log(data);
+  // }
+  
 
   return (
     <>
@@ -23,5 +32,6 @@ const Landing = () => {
     </>
   );
 };
+
 
 export default Landing;
