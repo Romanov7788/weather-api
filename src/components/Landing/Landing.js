@@ -13,25 +13,17 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+function Landing () {
 
-
-const Landing = () => {
-  const classes = useStyles();
-  // gettingWeather = async() => {
-  //   const api_url = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=${process.env.API_KEY}`);
-  //   const data = await api_url.json();
-  //   console.log(data);
-  // }
-  
+  const classes = useStyles(); 
 
   return (
-    <>
+
       <div className={classes.main}>
         <Typography className={classes.title}>Romanov weather API</Typography>
-      </div>
-    </>
+    </div>
   );
-};
+}
 
 
 export default Landing;
