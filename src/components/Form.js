@@ -15,9 +15,12 @@ const useStyles = makeStyles(theme => ({
     }
   }));
   
+
+
   function Form () {
-  
-    const API_KEY = "b33155410bb5168bd44ee883dc6eb26d";
+
+    // спятал ключ
+    const API_KEY = process.env.REACT_APP_API_KEY
   
     const classes = useStyles(); 
   
@@ -62,17 +65,17 @@ const useStyles = makeStyles(theme => ({
       
   
         <div>
-        <form>
-        <center>
+          <form>
+            <center>
           <input type="text" name="city" placeholder="Например Харьков" onChange={e => handleChange(e)}/>
-        </center>
-        <center>
+            </center>
+            <center>
           <button className="getweather" onClick={e => weatherData(e)}>Поиск</button>
-        </center>
-      </form>
-      <br />
-      </div>
-      {weather.data !== undefined ? (
+            </center>
+          </form>
+              <br />
+        </div>
+            {weather.data !== undefined ? (
         <div>
             <Weather data={weather.data} />
           </div>

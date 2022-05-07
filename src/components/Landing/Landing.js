@@ -4,7 +4,7 @@ import React from 'react';
 
 const useStyles = makeStyles(theme => ({
   main: {
-    backgroundColor: 'white'
+    backgroundColor: 'grey'
   },
   title: {
     fontSize: '62px',
