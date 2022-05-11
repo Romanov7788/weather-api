@@ -14,6 +14,7 @@ const Weather = ({ weather }) => {
         <td>
           <h4>{title}</h4>
         </td>
+        
         <td>
           <span>{date}</span>
         </td>
