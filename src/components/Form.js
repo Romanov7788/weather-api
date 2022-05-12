@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 function Form() {
 
   const API_KEY = process.env.REACT_APP_API_KEY;
-  const API_URL1 = process.env.REACT_APP_API_URL1;
+  const API_URL = process.env.REACT_APP_API_URL;
 
   const classes = useStyles();
 
@@ -28,10 +28,10 @@ function Form() {
 
   async function weatherData(e) {
     e.preventDefault();
-    if (city === "") {
+    if (city == "") {
       alert("ВВЕДИТЕ ГОРОД");
     } else {
-      fetch(`${API_URL1}weather?q=${city}&appid=${API_KEY}&units=metric`)
+      fetch(`${API_URL}weather?q=${city}&appid=${API_KEY}&units=metric`)
         .then((res) => res.json())
         .then((data) => setWeather(data));
     }
@@ -62,7 +62,7 @@ function Form() {
         </form>
         <br />
       </div>
-      {weather != undefined ? (
+      {weather !== undefined ? (
         <div>
           <Weather weather={weather} />
         </div>

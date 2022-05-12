@@ -4,9 +4,9 @@ import "./displayweather.css";
 
 
 const Weather = ({ weather }) => {
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL_ICON = process.env.REACT_APP_API_URL_ICON;
 
-  const iconurl = `${API_URL}` + `${weather.weather[0].icon}` + ".png";
+  const iconurl = `${API_URL_ICON}` + `${weather.weather[0].icon}` + ".png";
 
   const renderDataBloc = (title, date) => {
     return (
@@ -14,7 +14,6 @@ const Weather = ({ weather }) => {
         <td>
           <h4>{title}</h4>
         </td>
-        
         <td>
           <span>{date}</span>
         </td>
@@ -23,17 +22,16 @@ const Weather = ({ weather }) => {
   };
 
   return (
-    <div className="displayweather">
-      <div className="maincard">
-        <span className="cardtitle">Город: {weather.name}</span>
-        <span className="cardsubtitle">
+    <div className="displayWeather">
+      <div className="mainCard">
+        <span className="cardTitle">Город: {weather.name}</span>
+        <span className="cardSubtitle">
           Обновленно: {new Date().toLocaleTimeString()}
         </span>
         <h1>{Math.floor(weather.main.temp)}°</h1>
-        {/* <span classNAme="weather-main"> {weather.weather[0].main}</span> */}
         <img src={iconurl} className="weather-icon" alt="" />
 
-        <div className="weatherdetails">
+        <div className="weatherDetails">
           <div className="section1">
             <table>
               {renderDataBloc(
